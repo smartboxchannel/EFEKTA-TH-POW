@@ -25,12 +25,12 @@ const definition = {
         vendor: "EFEKTA",
         description: "Temperature and humidity smart monitor with voltage detector",
         extend: [
-		    identify(),
+            identify(),
             temperature({
                 reporting: fourReporting,
                 access: "STATE",
             }),
-			humidity({
+            humidity({
                 reporting: fourReporting,
                 access: "STATE",
             }),
@@ -95,7 +95,7 @@ const definition = {
                 description: "Enable сontrol of comparison with previous data",
                 access: "STATE_SET",
             }),
-			binary({
+            binary({
                 name: "enable_temperature",
                 valueOn: ["ON", 1],
                 valueOff: ["OFF", 0],
