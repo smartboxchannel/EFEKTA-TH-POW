@@ -98,9 +98,9 @@
       ],
       "bind": true,
       "report": {
-        "min": 60,
-        "max": 1200,
-        "change": 10
+        "min": 5,
+        "max": 300,
+        "change": 1
       }
     },
     {
@@ -113,8 +113,8 @@
       ],
       "bind": true,
       "report": {
-        "min": 120,
-        "max": 2400,
+        "min": 10,
+        "max": 600,
         "change": 10
       }
     },
@@ -480,3 +480,4 @@
     }
   ]
 }
+
