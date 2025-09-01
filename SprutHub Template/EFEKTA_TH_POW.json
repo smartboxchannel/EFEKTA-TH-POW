@@ -2,10 +2,12 @@
   "name": "Датчик EFEKTA TH POW",
   "manufacturer": "EfektaLab",
   "model": "EFEKTA_TH_POW_R",
-  "manufacturerId": "EfektaLab",
-  "modelId": "EFEKTA_TH_POW_R",
-  "catalogId": -1,
-  "status": "Test",
+  "manufacturerIds": [
+    "EfektaLab"
+  ],
+  "modelIds": [
+    "EFEKTA_TH_POW_R"
+  ],
   "template": [
     "/_Battery/BatteryPercentageRemaining.json"
   ],
