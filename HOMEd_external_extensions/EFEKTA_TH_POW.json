@@ -1,0 +1,241 @@
+{
+    "EFEKTA": [
+        {
+            "description": "Temperature and humidity smart monitor with voltage detector.",
+            "modelNames": [
+                "EFEKTA_TH_POW_R",
+				"EFEKTA_TH_POW_E"
+            ],
+            "exposes": [
+                "temperature",
+				"humidity",
+                "mainsVoltage",
+                "battery",
+				"lifeTime",
+                "readInterval",
+                "transmitPower",
+				"heater",
+				"configReportEnable",
+                "comparePrevious",
+				"enablingTemperatureControl",
+				"temperatureActions",
+				"tHigh",
+				"tLow",
+				"enablingHumidityControl",
+				"humidityActions",
+				"hHigh",
+				"hLow"
+            ],
+            "options": {
+                "customAttributes": {
+                    "mainsVoltage": {
+                        "type": "value",
+                        "clusterId": 1,
+                        "attributeId": 0,
+                        "dataType": 33,
+                        "divider": 10
+                    },
+					"lifeTime": {
+                        "type": "value",
+                        "clusterId": 10,
+                        "attributeId": 7,
+                        "dataType": 35
+                    },
+                    "readInterval": {
+                        "type": "value",
+                        "clusterId": 1,
+                        "attributeId": 513,
+                        "dataType": 33,
+                        "action": true
+                    },
+                    "transmitPower": {
+                        "type": "enum",
+                        "clusterId": 1,
+                        "attributeId": 566,
+                        "dataType": 40,
+                        "action": true
+                    },
+					"heater": {
+                        "type": "bool",
+                        "clusterId": 1026,
+                        "attributeId": 1317,
+                        "dataType": 16,
+                        "action": true
+                    },
+					"configReportEnable": {
+                        "type": "bool",
+                        "clusterId": 1,
+                        "attributeId": 629,
+                        "dataType": 16,
+                        "action": true
+                    },
+                    "comparePrevious": {
+                        "type": "bool",
+                        "clusterId": 1,
+                        "attributeId": 517,
+                        "dataType": 16,
+                        "action": true
+                    },
+					"enablingTemperatureControl": {
+                        "type": "bool",
+                        "clusterId": 1026,
+                        "attributeId": 544,
+                        "dataType": 16,
+                        "action": true
+                    },
+                    "temperatureActions": {
+                        "type": "enum",
+                        "clusterId": 1026,
+                        "attributeId": 549,
+                        "dataType": 16,
+                        "action": true
+                    },
+                    "tHigh": {
+                        "type": "value",
+                        "clusterId": 1026,
+                        "attributeId": 545,
+                        "dataType": 33,
+                        "action": true
+                    },
+                    "tLow": {
+                        "type": "value",
+                        "clusterId": 1026,
+                        "attributeId": 546,
+                        "dataType": 33,
+                        "action": true
+                    },
+					"enablingHumidityControl": {
+                        "type": "bool",
+                        "clusterId": 1029,
+                        "attributeId": 544,
+                        "dataType": 16,
+                        "action": true
+                    },
+                    "humidityActions": {
+                        "type": "enum",
+                        "clusterId": 1029,
+                        "attributeId": 549,
+                        "dataType": 16,
+                        "action": true
+                    },
+                    "hHigh": {
+                        "type": "value",
+                        "clusterId": 1029,
+                        "attributeId": 545,
+                        "dataType": 33,
+                        "action": true
+                    },
+                    "hLow": {
+                        "type": "value",
+                        "clusterId": 1029,
+                        "attributeId": 546,
+                        "dataType": 33,
+                        "action": true
+                    }
+                },
+				"temperatureReporting": {
+                    "minInterval": 5,
+                    "maxInterval": 300,
+                    "valueChange": 10
+                },
+				"humidityReporting": {
+                    "minInterval": 5,
+                    "maxInterval": 300,
+                    "valueChange": 25
+                },
+                "mainsVoltage": {
+                    "type": "sensor",
+                    "unit": "V"
+                },
+				"lifeTime": {
+                    "type": "sensor",
+                    "unit": "H"
+                },
+                "readInterval": {
+					"type": "number",
+                    "min": 3,
+                    "max": 360,
+                    "unit": "sec"
+                },
+                "transmitPower": {
+                    "type": "select",
+                    "enum": {
+                        "4": "4dBm",
+                        "19": "19dBm"
+                    }
+                },
+				"heater": {
+                    "type": "toggle"
+                },
+				"configReportEnable": {
+                    "type": "toggle"
+                },
+				"comparePrevious": {
+                    "type": "toggle"
+                },
+				"enablingTemperatureControl": {
+                    "type": "toggle"
+                },
+				"temperatureActions": {
+                    "type": "select",
+                    "enum": {
+                        "0": "HEAT",
+                        "1": "COOL"
+                    }
+                },
+				"tHigh": {
+					"type": "number",
+                    "min": -40,
+                    "max": 120
+                },
+                "tLow": {
+					"type": "number",
+                    "min": -40,
+                    "max": 120
+                },
+				"enablingHumidityControl": {
+                    "type": "toggle"
+                },
+				"humidityActions": {
+                    "type": "select",
+                    "enum": {
+                        "0": "WET",
+                        "1": "DRY"
+                    }
+                },
+				"hHigh": {
+					"type": "number",
+                    "min": 0,
+                    "max": 99
+                },
+                "hLow": {
+					"type": "number",
+                    "min": 0,
+                    "max": 99
+                }
+            }
+        },
+        {
+            "modelNames": [
+                "EFEKTA_TH_POW_R",
+				"EFEKTA_TH_POW_E"
+            ],
+            "properties": [
+                "batteryPercentage",
+                "temperature",
+				"humidity"
+            ],
+			"bindings": [
+                "battery",
+                "temperature",
+				"humidity"
+            ],
+            "reportings": [
+                "batteryPercentage",
+                "temperature",
+				"humidity"
+            ],
+            "endpointId": 1
+        }
+    ]
+}
