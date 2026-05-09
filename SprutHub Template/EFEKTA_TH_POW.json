@@ -3,11 +3,14 @@
   "manufacturer": "EfektaLab",
   "model": "EFEKTA_TH_POW_R",
   "manufacturerIds": [
-    "EfektaLab"
+    "EfektaLab",
+    "EfektaLab_for_Zigbee-Shop.ru"
   ],
   "modelIds": [
-    "EFEKTA_TH_POW_R"
+    "EFEKTA_TH_POW_R",
+    "EFEKTA_TH_POW_E"
   ],
+  "catalogId": 0,
   "template": [
     "/_Battery/BatteryPercentageRemaining.json"
   ],
@@ -78,13 +81,13 @@
           "endpoint": 1,
           "cluster": "0405_RelativeHumidityMeasurement",
           "attribute": "0221_Custom",
-          "zclDataType": "SIGNED_16_BIT_INTEGER"
+          "zclDataType": "UNSIGNED_16_BIT_INTEGER"
         },
         {
           "endpoint": 1,
           "cluster": "0405_RelativeHumidityMeasurement",
           "attribute": "0222_Custom",
-          "zclDataType": "SIGNED_16_BIT_INTEGER"
+          "zclDataType": "UNSIGNED_16_BIT_INTEGER"
         }
       ]
     },
@@ -98,9 +101,9 @@
       ],
       "bind": true,
       "report": {
-        "min": 5,
-        "max": 300,
-        "change": 1
+        "min": 60,
+        "max": 1200,
+        "change": 10
       }
     },
     {
@@ -113,8 +116,8 @@
       ],
       "bind": true,
       "report": {
-        "min": 10,
-        "max": 600,
+        "min": 120,
+        "max": 2400,
         "change": 10
       }
     },
@@ -192,7 +195,7 @@
       "name": "Прямая передача данных температуры на другое устройство",
       "description": "Привязка к другому устройству по данным температуры, для прямой передачи данных на другое устройство.",
       "type": "String",
-      "bind": true
+      "visibleBind": true
     },
     {
       "link": [
@@ -205,7 +208,7 @@
       "name": "Прямая передача данных влажности воздуха на другое устройсвто",
       "description": "Привязка к другому устройству по данным влажности воздуха, для прямой передачи данных на другое устройство.",
       "type": "String",
-      "bind": true
+      "visibleBind": true
     },
     {
       "link": [
@@ -218,7 +221,7 @@
       "name": "Прямое управление исполнительным устройством (реле, розетка, выключатель)",
       "description": "Работает биндинг только одного параметра (по температуре или влажности воздуха).",
       "type": "String",
-      "bind": true
+      "visibleBind": true
     }
   ],
   "services": [
@@ -247,6 +250,23 @@
               "endpoint": 1,
               "cluster": "0405_RelativeHumidityMeasurement",
               "attribute": "0000_MeasuredValue"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mains voltage",
+      "type": "C_VoltMeter",
+      "characteristics": [
+        {
+          "type": "C_Volt",
+          "link": [
+            {
+              "endpoint": 1,
+              "cluster": "0001_PowerConfiguration",
+              "attribute": "0000_MainsVoltage",
+              "inFunc": "value*0.1"
             }
           ]
         }
@@ -324,7 +344,7 @@
         }
       ],
       "name": "Мощность радио передатчика",
-      "description": "Чем выше мощность, тем выше энергопотребление, на максимальной мощности в 19dbm, потребление 100mA при передаче, при можности 4dbm потребление 50mA",
+      "description": "Чем выше мощность, тем выше энергопотребление, на максимальной мощности в 19dbm, потребление 100mA при передаче, при мощности 4dbm потребление 50mA",
       "type": "Integer",
       "value": 19,
       "values": [
@@ -480,4 +500,3 @@
     }
   ]
 }
-
